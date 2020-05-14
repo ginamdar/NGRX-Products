@@ -18,7 +18,16 @@ import * as fromProductState from './store';
     ProductEditComponent,
     ProductListComponent
   ],
-  imports: [CommonModule, ProductsRoutingModule, FormsModule, StoreModule.forFeature(fromProductState.productStateFeatureKey, fromProductState.reducers, { metaReducers: fromProductState.metaReducers })],
+  imports: [
+    CommonModule,
+    ProductsRoutingModule,
+    FormsModule,
+    StoreModule.forFeature(
+      fromProductState.productStateFeatureKey,
+      fromProductState.reducers,
+      { metaReducers: fromProductState.metaReducers }
+      )
+  ],
   providers: [ProductService],
   exports: [
     ProductComponent,

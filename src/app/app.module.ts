@@ -10,6 +10,8 @@ import { SharedModule } from "./shared/shared.module";
 import { ProductsModule } from "./products/products.module";
 import {StoreModule} from '@ngrx/store';
 import {metaReducers, reducers} from './reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent],
@@ -25,7 +27,8 @@ import {metaReducers, reducers} from './reducers';
         strictStateImmutability: true,
         strictActionImmutability: true
       }
-    })
+    }),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
